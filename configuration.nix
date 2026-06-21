@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -26,7 +27,7 @@
   time.timeZone = "Asia/Kuala_Lumpur";
 
   nixpkgs.config = {
-      allowUnfree = true;
+    allowUnfree = true;
   };
 
   # Configure network proxy if necessary
@@ -48,10 +49,10 @@
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
 
   programs.hyprland = {
-      enable = true;
-      xwayland.enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-      portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+    enable = true;
+    xwayland.enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
 
   # Enable CUPS to print documents.
