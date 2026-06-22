@@ -60,6 +60,7 @@
   services.pipewire = {
     enable = true;
     pulse.enable = true;
+    wireplumber.enable = true;
   };
 
   programs.zsh.enable = true;
@@ -76,26 +77,17 @@
 
   programs.firefox.enable = true;
 
+  programs.steam.enable = true;
+
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim
     wget
     curl
-    foot
-    kitty
     git
-    waybar
-    wiremix
-    rofi
-    swayimg
     usbutils
-    fastfetch
-    zoxide
-    brightnessctl
-    wl-clipboard
-    grim
-    slurp
+    unzip
   ];
 
   fonts.packages = with pkgs; [
@@ -112,6 +104,8 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # List services that you want to enable:
+  services.upower.enable = true;
+  services.udisks2.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

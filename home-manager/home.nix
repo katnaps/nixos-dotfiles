@@ -20,21 +20,42 @@ in
     source = create_symlink "${config.home.homeDirectory}/nixos-dotfiles/.zshrc";
   };
 
-  programs.git = {
-    enable = true;
-  };
-
-  home.stateVersion = "26.05";
-  programs.zsh.enable = false;
-
-  program.fzf = {
-    enable = true;
-  };
-
   home.packages = with pkgs; [
+    # Wayland
     hyprpaper
+    rofi
+    grim
+    slurp
+    wl-clipboard
+    brightnessctl
+
+    # Terminal & Shell Utilities
+    foot
+    kitty
     oh-my-posh
+    fastfetch
+
+    # Media & Viewers
+    vlc
+    mpv
+    swayimg
+    wiremix
   ];
+
+  programs = {
+    git.enable = true;
+    waybar.enable = true;
+    zoxide.enable = true;
+    fzf.enable = true;
+    zsh.enable = false;
+
+    yazi = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+  };
+
+  services.udiskie.enable = true;
 
   home.pointerCursor = {
     package = pkgs.adwaita-icon-theme;
@@ -50,4 +71,5 @@ in
     })
     configs;
 
+  home.stateVersion = "26.05";
 }
