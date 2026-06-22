@@ -93,6 +93,9 @@
     fastfetch
     zoxide
     brightnessctl
+    wl-clipboard
+    grim
+    slurp
   ];
 
   fonts.packages = with pkgs; [
