@@ -23,6 +23,7 @@
         modules = [
           ./nixos/configuration.nix
           ./modules/nvidia.nix
+
           home-manager.nixosModules.home-manager
           {
             home-manager = {
