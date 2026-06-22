@@ -23,8 +23,6 @@
 
   boot.loader.systemd-boot.configurationLimit = 10;
 
-  boot.blacklistedKernelModules = [ "iwlwifi" ];
-
   networking.hostName = "nixos"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
@@ -33,8 +31,6 @@
 
   # Set your time zone.
   time.timeZone = "Asia/Kuala_Lumpur";
-
-  hardware.bluetooth.enable = true;
 
   nixpkgs.config = {
     allowUnfree = true;
