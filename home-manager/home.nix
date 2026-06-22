@@ -23,6 +23,7 @@ in
   home.packages = with pkgs; [
     # Wayland
     hyprpaper
+    waybar
     rofi
     grim
     slurp
@@ -34,6 +35,7 @@ in
     kitty
     oh-my-posh
     fastfetch
+    nvtop
 
     # Media & Viewers
     vlc
@@ -44,9 +46,9 @@ in
 
   programs = {
     git.enable = true;
-    waybar.enable = true;
     zoxide.enable = true;
     fzf.enable = true;
+    btop.enable = true;
     zsh.enable = false;
 
     yazi = {
@@ -55,7 +57,10 @@ in
     };
   };
 
-  services.udiskie.enable = true;
+  services.udiskie = {
+    enable = true;
+    tray = "auto";
+  };
 
   home.pointerCursor = {
     package = pkgs.adwaita-icon-theme;
