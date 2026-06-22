@@ -58,8 +58,6 @@
   # services.xserver.enable = true;
   services.displayManager.ly.enable = true;
 
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
-
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;

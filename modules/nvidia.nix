@@ -1,0 +1,27 @@
+{ config, pkgs, lib, ... }:
+
+{
+  # NVIDIA Driver
+  hardware.nvidia = {
+    # Use legacy 580 driver for GTX 10xx series
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
+
+    # Important for Hyprland / Wayland
+    modesetting.enable = true;
+
+    # Enable the nvidia-settings GUI tool
+    nvidiaSettings = true;
+
+    # Power management (disable by default, enable on laptops if needed)
+    powerManagement.enable = false;
+
+    # Open kernel modules (usually false for legacy drivers)
+    open = false;
+  };
+
+  # Required for proper NVIDIA behavior on modern NixOS
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  # Optional: NVIDIA container toolkit (useful for Docker/Podman)
+  # hardware.nvidia-container-toolkit.enable = true;
+}
