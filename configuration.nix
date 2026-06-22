@@ -15,6 +15,18 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  nix.optimise.automatic = true;
+  nix.settings.auto-optimise-store = true;
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+    persistent = true;
+  };
+
+  boot.loader.systemd-boot.configurationLimit = 10;
+
   boot.blacklistedKernelModules = [ "iwlwifi" ];
 
   networking.hostName = "nixos"; # Define your hostname.
