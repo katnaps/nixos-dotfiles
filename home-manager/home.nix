@@ -68,10 +68,7 @@ in
     };
   };
 
-  services.udiskie = {
-    enable = true;
-    tray = "auto";
-  };
+  services.udiskie.enable = true;
 
   home.pointerCursor = {
     package = pkgs.adwaita-icon-theme;
