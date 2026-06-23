@@ -36,6 +36,7 @@ in
     oh-my-posh
     fastfetch
     nvtop
+    bat
 
     # Media & Viewers
     vlc
@@ -45,11 +46,21 @@ in
   ];
 
   programs = {
+    zsh.enable = false;
     git.enable = true;
     zoxide.enable = true;
-    fzf.enable = true;
+    fd.enable = true;
     btop.enable = true;
-    zsh.enable = false;
+
+
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+      # This tells fzf to use fd for searching files
+      defaultCommand = "fd --type f --hidden --exclude .git";
+      # This tells fzf to use fd when you press Ctrl+T
+      fileWidgetCommand = "fd --type f --hidden --exclude .git";
+    };
 
     yazi = {
       enable = true;

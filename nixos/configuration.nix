@@ -23,6 +23,8 @@
 
   boot.loader.systemd-boot.configurationLimit = 10;
 
+  hardware.bluetooth.enable = true;
+
   networking.hostName = "nixos"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
@@ -89,6 +91,7 @@
     git
     usbutils
     unzip
+    alsa-utils
   ];
 
   fonts.packages = with pkgs; [

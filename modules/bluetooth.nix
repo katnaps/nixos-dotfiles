@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  hardware.bluetooth.enable = true;
-
   # Kills the internal Intel card completely (Wi-Fi + BT)
   boot.blacklistedKernelModules = [ "iwlwifi" ];
 
