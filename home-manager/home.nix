@@ -51,7 +51,9 @@ in
     zoxide.enable = true;
     fd.enable = true;
     btop.enable = true;
-
+    firefox.enable = true;
+    brave.enable = true;
+    keepassxc.enable = true;
 
     fzf = {
       enable = true;

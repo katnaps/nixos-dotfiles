@@ -78,8 +78,6 @@
     ];
   };
 
-  programs.firefox.enable = true;
-
   programs.steam.enable = true;
 
   # List packages installed in system profile.
