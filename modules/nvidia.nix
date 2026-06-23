@@ -33,7 +33,4 @@
 
   # Required for proper NVIDIA behavior on modern NixOS
   services.xserver.videoDrivers = [ "nvidia" ];
-
-  # Optional: NVIDIA container toolkit (useful for Docker/Podman)
-  # hardware.nvidia-container-toolkit.enable = true;
 }
