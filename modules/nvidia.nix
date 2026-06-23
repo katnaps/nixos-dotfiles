@@ -17,6 +17,18 @@
 
     # Open kernel modules (usually false for legacy drivers)
     open = false;
+
+    prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+
+      sync.enable = false;
+
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
   };
 
   # Required for proper NVIDIA behavior on modern NixOS
