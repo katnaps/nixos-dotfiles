@@ -23,6 +23,9 @@
         modules = [
           ./nixos/configuration.nix
           ./modules/nvidia.nix
+          ./modules/bluetooth.nix
+          ./modules/keyboard.nix
+          ./modules/controller.nix
 
           home-manager.nixosModules.home-manager
           {
