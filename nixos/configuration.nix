@@ -94,7 +94,10 @@
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
     noto-fonts-color-emoji
+    roboto
+    roboto-mono
     font-awesome
+    nerd-fonts.font-awesome
     liberation_ttf
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
