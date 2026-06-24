@@ -35,7 +35,7 @@ in
     kitty
     oh-my-posh
     fastfetch
-    nvtop
+    nvtopPackages.full
     bat
 
     # Media & Viewers
@@ -43,11 +43,16 @@ in
     mpv
     swayimg
     wiremix
+
+    # Languages
+    rustup
+    nodejs
+    nixd
+    alejandra
   ];
 
   programs = {
     zsh.enable = false;
-    git.enable = true;
     zoxide.enable = true;
     fd.enable = true;
     btop.enable = true;
@@ -55,9 +60,15 @@ in
     brave.enable = true;
     keepassxc.enable = true;
 
+    git = {
+      enable = true;
+      includes = [
+        { path = "~/.config/git/local.config"; }
+      ];
+    };
+
     fzf = {
       enable = true;
-      enableZshIntegration = true;
       # This tells fzf to use fd for searching files
       defaultCommand = "fd --type f --hidden --exclude .git";
       # This tells fzf to use fd when you press Ctrl+T
@@ -67,6 +78,27 @@ in
     yazi = {
       enable = true;
       enableZshIntegration = true;
+    };
+
+    neovim = {
+        enable = true;
+        defaultEditor = true;
+        viAlias = true;
+        vimAlias = true;
+        waylandSupport = true;
+
+    sideloadInitLua = true;
+    extraPackages = with pkgs; [
+      gcc
+      gnumake
+      unzip
+      ripgrep
+      fd
+      tree-sitter
+      rust-analyzer
+      alejandra
+      nixd
+      ];
     };
   };
 
@@ -84,7 +116,7 @@ in
       source = create_symlink "${dotfiles}/${subpath}";
       recursive = true;
     })
-    configs;
+    configs; 
 
   home.stateVersion = "26.05";
 }

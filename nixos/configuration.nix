@@ -27,7 +27,7 @@
 
   hardware.bluetooth.enable = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos-fruit"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
