@@ -29,6 +29,7 @@ in
     slurp
     wl-clipboard
     brightnessctl
+    mesa-demos
 
     # Terminal & Shell Utilities
     foot

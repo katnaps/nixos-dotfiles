@@ -50,3 +50,5 @@ eval "$(zoxide init --cmd cd zsh)"
 # Exports
 export EDITOR="nvim"
 export VISUAL="nvim"
+
+source <(fzf --zsh)

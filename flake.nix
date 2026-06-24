@@ -15,12 +15,21 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs: {
+  outputs = { self, nixpkgs, home-manager, ... } @ inputs: 
+
+    let
+      bluezOverlays = import ./overlays { inherit inputs; };
+    in
+
+  {
     nixosConfigurations = {
       nixos-fruit = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
+
+          { nixpkgs.overlays = [ bluezOverlays.additions]; }
+
           ./nixos/configuration.nix
           ./modules/nvidia.nix
           ./modules/bluetooth.nix
