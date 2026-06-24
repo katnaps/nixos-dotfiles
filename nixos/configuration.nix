@@ -52,30 +52,13 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  hardware.enableAllFirmware = true;
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-    settings = {
-      General = {
-        Enable = "Source,Sink,Media,Socket";
-        MultiProfile = "single";
-      };
-    };
-  };
+  hardware.bluetooth.enable = true;
 
-  # Enable sound.
-  services.pulseaudio.enable = false;
-  # OR
   services.pipewire = {
     enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
     pulse.enable = true;
     wireplumber.enable = true;
   };
-
-  systemd.services.pulseaudio.enable = false;
 
   programs.zsh = {
     enable = true;
