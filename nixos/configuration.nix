@@ -25,7 +25,14 @@
 
   boot.loader.systemd-boot.configurationLimit = 10;
 
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+      settings = {
+        General = {
+        Enable = "Source,Sink,Media,Socket";
+      };
+    };
+  };
 
   networking.hostName = "nixos-fruit"; # Define your hostname.
 
@@ -55,12 +62,21 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  # services.pulseaudio.enable = true;
+  services.pulseaudio.enable = false;
   # OR
   services.pipewire = {
     enable = true;
     pulse.enable = true;
     wireplumber.enable = true;
+  };
+
+  services.pipewire.wireplumber.extraConfig."10-bluez" = {
+    "monitor.bluez.properties" = {
+      "bluez5.enable-sbc-xq" = true;
+      "bluez5.enble-msbc" = true;
+      "bluez5.enble-hw-volume" = true;
+      "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" "a2dp_sink" "a2dp_source" ];
+    };
   };
 
   programs.zsh = {

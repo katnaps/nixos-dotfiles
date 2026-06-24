@@ -47,9 +47,9 @@ hl.monitor({
 ---------------------
 
 -- Set programs that you use
-local terminal = "uwsm app -- foot"
+local terminal = "foot"
 -- local fileManager = "dolphin"
-local menu = "uwsm app -- rofi -show drun -run-command 'uwsm app -- {cmd}'"
+local menu = "rofi -show drun -run-command"
 
 -------------------
 ---- AUTOSTART ----
@@ -61,9 +61,9 @@ local menu = "uwsm app -- rofi -show drun -run-command 'uwsm app -- {cmd}'"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function()
-	hl.exec_cmd("uwsm app -- waybar -c ~/.config/waybar/config.hyprland")
-	hl.exec_cmd("uwsm app -- hyprpaper")
-	hl.exec_cmd("uwsm app -- udiskie")
+	hl.exec_cmd("waybar -c ~/.config/waybar/config.hyprland")
+	hl.exec_cmd("hyprpaper")
+	hl.exec_cmd("udiskie")
 end)
 
 -------------------------------
