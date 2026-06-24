@@ -5,8 +5,8 @@
     # NixOS repo
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
 
-    # Pinned repo for BlueZ 5.85
-    nixpkgs-bluez-pinned.url = "github:nixos/nixpkgs/e8bc37ff392557ca7cb006f8902096316713919e";
+    # Pinned repo for BlueZ 5.84
+    nixpkgs-bluez.url = "github:nixos/nixpkgs/b86751bc4085f48661017fa226dee99fab6c651b";
 
     # Hyprland repo
     hyprland.url = "github:hyprwm/Hyprland";
@@ -18,19 +18,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs: {
+  outputs = { self, nixpkgs, home-manager, nixpkgs-bluez, ... } @ inputs: {
     nixosConfigurations = {
       nixos-fruit = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          {
-            nixpkgs.overlays = [
-              (final: prev: {
-                bluez = inputs.nixpkgs-bluez-pinned.legacyPackages.${prev.stdenv.hostPlatform.system}.bluez;
-              })
-            ];
-          }
 
           ./nixos/configuration.nix
           ./modules/nvidia.nix

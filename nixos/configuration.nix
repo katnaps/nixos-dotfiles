@@ -52,8 +52,6 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  hardware.bluetooth.enable = true;
-
   services.pipewire = {
     enable = true;
     pulse.enable = true;
