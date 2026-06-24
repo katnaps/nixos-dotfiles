@@ -97,7 +97,6 @@
     roboto
     roboto-mono
     font-awesome
-    nerd-fonts.font-awesome
     liberation_ttf
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
