@@ -4,12 +4,13 @@ let
   dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
+    nvim = "nvim";
     foot = "foot";
     waybar = "waybar";
     rofi = "rofi";
     ohmyposh = "ohmyposh";
-    hypr/hyprpaper.conf = "hypr/hyprpaper.conf";
-    hypr/hl.meta.lua =  "hypr/hl.meta.lua";
+    "hypr/hyprpaper.conf" = "hypr/hyprpaper.conf";
+    "hypr/hl.meta.lua" =  "hypr/hl.meta.lua";
   };
 in
 
