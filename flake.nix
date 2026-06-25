@@ -20,10 +20,8 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       home-manager,
-      nixpkgs-bluez,
       ...
     }@inputs:
     {
