@@ -16,6 +16,23 @@ in
   home.username = "coconut";
   home.homeDirectory = "/home/coconut";
 
+  # wayland.windowManager.hyprland = {
+  #   enable = true;
+  #
+  #   # This is the key part for proper service startup (udiskie, etc.)
+  #   systemd = {
+  #     enable = true;
+  #     variables = ["--all"];
+  #   };
+  #
+  #   # Since you're managing config with symlink, tell HM not to generate its own
+  #   configType = "lua";        # or "none" depending on your HM version
+  # };
+  #
+  # home.file."hyprland.lua" = {
+  #   source = create_symlink "${config.home.homeDirectory}/nixos-dotfiles/config/hypr/hyprland.lua";
+  # };
+
   home.file.".zshrc" = {
     source = create_symlink "${config.home.homeDirectory}/nixos-dotfiles/.zshrc";
   };
@@ -104,6 +121,7 @@ in
   };
 
   services.udiskie.enable = true;
+  # systemd.user.services.udiskie.Install.WantedBy = [ "default.target" ];
 
   home.pointerCursor = {
     package = pkgs.adwaita-icon-theme;

@@ -61,10 +61,7 @@ local menu = "rofi -show drun -run-command"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function()
-	-- Add this near your startup hooks / exec section
-	hl.exec_cmd("exec-once", "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-	hl.exec_cmd("exec-once", "systemctl --user start graphical-session.target")
-	hl.exec_cmd("waybar -c ~/.config/waybar/config.jsonc")
+	hl.exec_cmd("waybar -c ~/.config/waybar/config.hyprland")
 	hl.exec_cmd("hyprpaper")
 	hl.exec_cmd("udiskie")
 end)
