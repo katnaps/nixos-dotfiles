@@ -8,8 +8,8 @@ let
     waybar = "waybar";
     rofi = "rofi";
     ohmyposh = "ohmyposh";
-    # "hypr/hyprpaper.conf" = "hypr/hyprpaper.conf";
-    # "hypr/hl.meta.lua" =  "hypr/hl.meta.lua";
+    "hypr/hyprpaper.conf" = "hypr/hyprpaper.conf";
+    "hypr/hl.meta.lua" =  "hypr/hl.meta.lua";
   };
 in
 
@@ -122,7 +122,7 @@ in
     };
 
     configType = "lua";        # or "none" depending on your HM version
-    # extraConfig = builtins.readFile ../config/hypr/hyprland.lua;
+    extraConfig = builtins.readFile ../config/hypr/hyprland.lua;
   };
 
   xdg.configFile = builtins.mapAttrs
