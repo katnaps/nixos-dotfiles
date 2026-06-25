@@ -17,20 +17,6 @@ in
   home.username = "coconut";
   home.homeDirectory = "/home/coconut";
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-
-    # This is the key part for proper service startup (udiskie, etc.)
-    systemd = {
-      enable = true;
-      variables = ["--all"];
-    };
-
-    # Since you're managing config with symlink, tell HM not to generate its own
-    configType = "lua";        # or "none" depending on your HM version
-    extraConfig = builtins.readFile ../config/hypr/hyprland.lua;
-  };
-
   home.file.".zshrc" = {
     source = create_symlink "${config.home.homeDirectory}/nixos-dotfiles/.zshrc";
   };
@@ -127,12 +113,24 @@ in
     gtk.enable = true;
   };
 
+  wayland.windowManager.hyprland = {
+    enable = true;
+
+    systemd = {
+      enable = true;
+      variables = ["--all"];
+    };
+
+    configType = "lua";        # or "none" depending on your HM version
+    extraConfig = builtins.readFile ../config/hypr/hyprland.lua;
+  };
+
   xdg.configFile = builtins.mapAttrs
     (name: subpath: {
       source = create_symlink "${dotfiles}/${subpath}";
       recursive = true;
     })
-    configs; 
+  configs; 
 
   home.stateVersion = "26.05";
 }
