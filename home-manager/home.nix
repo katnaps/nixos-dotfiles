@@ -8,6 +8,8 @@ let
     waybar = "waybar";
     rofi = "rofi";
     ohmyposh = "ohmyposh";
+    "hypr/hyprpaper.conf" = "hypr/hyprpaper.conf";
+    "hypr/hl.meta.lua" =  "hypr/hl.meta.lua";
   };
 in
 
@@ -117,7 +119,6 @@ in
   };
 
   services.udiskie.enable = true;
-  # systemd.user.services.udiskie.Install.WantedBy = [ "default.target" ];
 
   home.pointerCursor = {
     package = pkgs.adwaita-icon-theme;
