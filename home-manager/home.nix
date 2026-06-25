@@ -121,7 +121,7 @@ in
       variables = ["--all"];
     };
 
-    configType = "lua";        # or "none" depending on your HM version
+    configType = "lua";
     extraConfig = builtins.readFile ../config/hypr/hyprland.lua;
   };
 
