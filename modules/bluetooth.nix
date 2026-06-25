@@ -1,4 +1,9 @@
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 
 let
   pinnedBluezBase = inputs.nixpkgs-bluez.legacyPackages.${pkgs.stdenv.hostPlatform.system}.bluez;
@@ -13,7 +18,7 @@ in
   hardware.bluetooth = {
     enable = true;
     # Pin ONLY the bluetooth system service to 5.85
-    package = customBluez585; 
+    package = customBluez585;
   };
   # Kills the internal Intel card completely (Wi-Fi + BT)
   boot.blacklistedKernelModules = [ "iwlwifi" ];

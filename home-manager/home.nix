@@ -1,16 +1,15 @@
 { config, pkgs, ... }:
-
 let
   dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
-    nvim = "nvim";
     foot = "foot";
     waybar = "waybar";
     rofi = "rofi";
     ohmyposh = "ohmyposh";
     "hypr/hyprpaper.conf" = "hypr/hyprpaper.conf";
-    "hypr/hl.meta.lua" =  "hypr/hl.meta.lua";
+    "hypr/hl.meta.lua" = "hypr/hl.meta.lua";
+    "nvim/lua" = "nvim/lua";
   };
 in
 
@@ -48,10 +47,10 @@ in
     wiremix
 
     # Languages
+    nixd
+    nixfmt
     rustup
     nodejs
-    nixd
-    alejandra
   ];
 
   programs = {
@@ -84,23 +83,27 @@ in
     };
 
     neovim = {
-        enable = true;
-        defaultEditor = true;
-        viAlias = true;
-        vimAlias = true;
-        waylandSupport = true;
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+      waylandSupport = true;
+      initLua = builtins.readFile ../config/nvim/init.lua;
 
-    extraPackages = with pkgs; [
-      gcc
-      gnumake
-      unzip
-      ripgrep
-      fd
-      tree-sitter
-      rust-analyzer
-      alejandra
-      nixd
-      lua-language-server
+      extraPackages = with pkgs; [
+        gcc
+        gnumake
+        unzip
+        ripgrep
+        fd
+        tree-sitter
+
+        # LSPs and Formatters
+        lua-language-server
+        nixd
+        nixfmt
+        rust-analyzer
+        prettier
       ];
     };
   };
@@ -119,19 +122,17 @@ in
 
     systemd = {
       enable = true;
-      variables = ["--all"];
+      variables = [ "--all" ];
     };
 
     configType = "lua";
     extraConfig = builtins.readFile ../config/hypr/hyprland.lua;
   };
 
-  xdg.configFile = builtins.mapAttrs
-    (name: subpath: {
-      source = create_symlink "${dotfiles}/${subpath}";
-      recursive = true;
-    })
-  configs; 
+  xdg.configFile = builtins.mapAttrs (name: subpath: {
+    source = create_symlink "${dotfiles}/${subpath}";
+    recursive = true;
+  }) configs;
 
   home.stateVersion = "26.05";
 }

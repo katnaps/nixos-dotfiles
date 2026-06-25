@@ -18,31 +18,39 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-bluez, ... } @ inputs: {
-    nixosConfigurations = {
-      nixos-fruit = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      nixpkgs-bluez,
+      ...
+    }@inputs:
+    {
+      nixosConfigurations = {
+        nixos-fruit = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
 
-          ./nixos/configuration.nix
-          ./modules/nvidia.nix
-          ./modules/bluetooth.nix
-          ./modules/keyboard.nix
-          ./modules/controller.nix
+            ./nixos/configuration.nix
+            ./modules/nvidia.nix
+            ./modules/bluetooth.nix
+            ./modules/keyboard.nix
+            ./modules/controller.nix
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              extraSpecialArgs = { inherit inputs; };
-              users.coconut = import ./home-manager/home.nix;
-              backupFileExtension = "backup";
-            };
-          }
-        ];
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { inherit inputs; };
+                users.coconut = import ./home-manager/home.nix;
+                backupFileExtension = "backup";
+              };
+            }
+          ];
+        };
       };
     };
-  };
 }
