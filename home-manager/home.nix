@@ -8,8 +8,8 @@ let
     waybar = "waybar";
     rofi = "rofi";
     ohmyposh = "ohmyposh";
-    "hypr/hyprpaper.conf" = "hypr/hyprpaper.conf";
-    "hypr/hl.meta.lua" =  "hypr/hl.meta.lua";
+    hypr/hyprpaper.conf = "hypr/hyprpaper.conf";
+    hypr/hl.meta.lua =  "hypr/hl.meta.lua";
   };
 in
 
@@ -89,7 +89,6 @@ in
         vimAlias = true;
         waylandSupport = true;
 
-    sideloadInitLua = true;
     extraPackages = with pkgs; [
       gcc
       gnumake
@@ -100,6 +99,7 @@ in
       rust-analyzer
       alejandra
       nixd
+      lua-language-server
       ];
     };
   };
