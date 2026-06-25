@@ -48,8 +48,8 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal = "foot"
--- local fileManager = "dolphin"
 local menu = "rofi -show drun -run-command"
+-- local fileManager = "dolphin"
 
 -------------------
 ---- AUTOSTART ----
