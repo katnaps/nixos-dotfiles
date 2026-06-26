@@ -45,6 +45,7 @@ in
     mpv
     swayimg
     wiremix
+    stremio-linux-shell
 
     # Languages
     nixd
