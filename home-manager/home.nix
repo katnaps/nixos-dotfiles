@@ -134,10 +134,6 @@ in
     extraConfig = builtins.readFile ../config/hypr/hyprland.lua;
   };
 
-  services.flatpak.packages = [
-    "flathub com.stremio.Stremio"
-  ];
-
   # Helps desktop find Flatpak apps (recommended for Hyprland)
   home.sessionVariables = {
     XDG_DATA_DIRS = "$XDG_DATA_DIRS:/var/lib/flatpak/exports/share";

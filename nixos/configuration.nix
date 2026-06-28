@@ -114,6 +114,10 @@
   services.udisks2.enable = true;
   services.flatpak.enable = true;
 
+  services.flatpak.packages = [
+    "flathub:app/com.stremio.Stremio//stable"
+  ];
+
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
