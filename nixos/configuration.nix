@@ -116,13 +116,24 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 25;
+  };
+
   swapDevices = [
     {
       device = "/var/lib/swapfile";
       size = 8 * 1024;
       options = [ "discard" ];
+      priority = 100;
     }
   ];
+
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 100;
+  };
 
   system.stateVersion = "26.05";
 }
