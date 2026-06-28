@@ -115,7 +115,10 @@
   services.flatpak.enable = true;
 
   services.flatpak.packages = [
-    "flathub:app/com.stremio.Stremio//stable"
+    {
+      appId = "com.stremio.Stremio";
+      origin = "flathub";
+    }
   ];
 
   # Enable the OpenSSH daemon.
