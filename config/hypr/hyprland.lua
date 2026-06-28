@@ -3,7 +3,9 @@
 
 -- startup
 hl.on("hyprland.start", function()
-  hl.exec_cmd("/nix/store/165rncxlyi4f9pjf1zk3hmj3mh2v881w-dbus-1.16.2/bin/dbus-update-activation-environment --systemd --all && systemctl --user stop hyprland-session.target && systemctl --user start hyprland-session.target")
+	hl.exec_cmd(
+		"/nix/store/165rncxlyi4f9pjf1zk3hmj3mh2v881w-dbus-1.16.2/bin/dbus-update-activation-environment --systemd --all && systemctl --user stop hyprland-session.target && systemctl --user start hyprland-session.target"
+	)
 end)
 
 -- extraConfig
@@ -196,9 +198,9 @@ hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" 
 --     rounding    = 0,
 -- })
 hl.window_rule({
-	name  = "brave-on-w3",
+	name = "brave-on-w3",
 	match = { class = "brave-browser" },
-	workspace = "3 silent"
+	workspace = "3 silent",
 })
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
@@ -411,4 +413,3 @@ hl.window_rule({
 	move = "20 monitor_h-120",
 	float = true,
 })
-
