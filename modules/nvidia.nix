@@ -3,7 +3,7 @@
 {
   # NVIDIA Driver
   hardware.nvidia = {
-    enable = true;
+    enabled = true;
     # Use legacy 580 driver for GTX 10xx series
     package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
 
