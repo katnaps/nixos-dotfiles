@@ -14,10 +14,17 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }@inputs:
+    {
+      nixpkgs,
+      home-manager,
+      nix-flatpak,
+      ...
+    }@inputs:
     {
       nixosConfigurations = {
         nixos-fruit = nixpkgs.lib.nixosSystem {
@@ -48,6 +55,8 @@
                 backupFileExtension = "backup";
               };
             }
+
+            nix-flatpak.nixosModules.nix-flatpak
           ];
         };
       };

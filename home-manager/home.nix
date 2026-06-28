@@ -21,6 +21,11 @@ in
     source = create_symlink "${config.home.homeDirectory}/nixos-dotfiles/.zshrc";
   };
 
+  xdg.configFile = builtins.mapAttrs (name: subpath: {
+    source = create_symlink "${dotfiles}/${subpath}";
+    recursive = true;
+  }) configs;
+
   home.packages = with pkgs; [
     # Wayland
     hyprpaper
@@ -45,7 +50,6 @@ in
     mpv
     swayimg
     wiremix
-    stremio-linux-shell
 
     # Languages
     nixd
@@ -130,10 +134,14 @@ in
     extraConfig = builtins.readFile ../config/hypr/hyprland.lua;
   };
 
-  xdg.configFile = builtins.mapAttrs (name: subpath: {
-    source = create_symlink "${dotfiles}/${subpath}";
-    recursive = true;
-  }) configs;
+  services.flatpak.packages = [
+    "flathub com.stremio.Stremio"
+  ];
+
+  # Helps desktop find Flatpak apps (recommended for Hyprland)
+  home.sessionVariables = {
+    XDG_DATA_DIRS = "$XDG_DATA_DIRS:/var/lib/flatpak/exports/share";
+  };
 
   home.stateVersion = "26.05";
 }

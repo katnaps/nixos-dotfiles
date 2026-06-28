@@ -112,6 +112,7 @@
   # List services that you want to enable:
   services.upower.enable = true;
   services.udisks2.enable = true;
+  services.flatpak.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
