@@ -197,7 +197,7 @@ hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" 
 -- })
 hl.window_rule({
 	name  = "brave-on-w3",
-	match = { class = "^(brave)$" },
+	match = { class = "brave-browser" },
 	workspace = "3 silent"
 })
 

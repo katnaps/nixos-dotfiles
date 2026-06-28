@@ -109,6 +109,7 @@ in
         nixfmt
         rust-analyzer
         prettier
+        stylua
       ];
     };
   };

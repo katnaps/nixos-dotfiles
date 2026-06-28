@@ -802,6 +802,7 @@ do
     formatters_by_ft = {
       nix = { 'nixfmt' },
       rust = { 'rustfmt' },
+      lua = { 'stylua' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --
