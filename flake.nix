@@ -9,12 +9,13 @@
     # Hyprland repo
     hyprland.url = "github:hyprwm/Hyprland";
 
-    # Home manager repo
+    # Home Manager repo
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Nix Flatpak repo
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
