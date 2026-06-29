@@ -17,10 +17,6 @@ in
   home.username = "coconut";
   home.homeDirectory = "/home/coconut";
 
-  home.file.".zshrc" = {
-    source = create_symlink "${config.home.homeDirectory}/nixos-dotfiles/.zshrc";
-  };
-
   xdg.configFile = builtins.mapAttrs (name: subpath: {
     source = create_symlink "${dotfiles}/${subpath}";
     recursive = true;
@@ -59,7 +55,6 @@ in
   ];
 
   programs = {
-    zsh.enable = false;
     zoxide.enable = true;
     fd.enable = true;
     btop.enable = true;
@@ -67,6 +62,14 @@ in
     brave.enable = true;
     keepassxc.enable = true;
     gpg.enable = true;
+
+    zsh = {
+      enable = true;
+      initContent = ''
+        source /home/coconut/nixos-dotfiles/.zshrc;
+        export GPG_TTY=$(tty)
+      '';
+    };
 
     git = {
       enable = true;
