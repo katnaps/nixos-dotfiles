@@ -66,6 +66,7 @@ in
     firefox.enable = true;
     brave.enable = true;
     keepassxc.enable = true;
+    gpg.enable = true;
 
     git = {
       enable = true;
@@ -114,7 +115,17 @@ in
     };
   };
 
-  services.udiskie.enable = true;
+  services = {
+    udiskie.enable = true;
+
+    # pinetry for gpg
+    gpg-agent = {
+      enable = true;
+      pinentry = {
+        package = pkgs.pinentry-curses;
+      };
+    };
+  };
 
   home.pointerCursor = {
     package = pkgs.adwaita-icon-theme;
