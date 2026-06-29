@@ -51,4 +51,8 @@ eval "$(zoxide init --cmd cd zsh)"
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+# Enable fzf with zsh history search for CTRL + R
 source <(fzf --zsh)
+
+# Export GPG
+export GPG_TTY=$(tty)
