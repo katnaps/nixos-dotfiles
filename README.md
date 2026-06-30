@@ -1,6 +1,11 @@
 # Instllation
 ## Requirements
- - copy the hardware-configuration.nix from `/etc/nixos/hardware-configuration.nix` to `nixos-dotfiles/nixos/` directory.
+ - Copy the hardware-configuration.nix from `/etc/nixos/hardware-configuration.nix` to `nixos-dotfiles/nixos/` directory.
+
+Copy hardware-configuration.nix by running this command
+```
+# cp -v /etc/nixos/hardware-configuration.nix ~/nixos-dotfiles/nixos/
+```
 
 You will need create the flake.lock from flake.nix
 Run the following command
