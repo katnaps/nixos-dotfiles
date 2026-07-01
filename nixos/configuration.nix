@@ -78,6 +78,7 @@
   };
 
   programs.steam.enable = true;
+  programs.git.enable = true;
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -85,7 +86,6 @@
     vim
     wget
     curl
-    git
     usbutils
     unzip
     alsa-utils
