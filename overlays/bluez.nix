@@ -1,15 +1,15 @@
 final: prev: {
   bluez = prev.bluez.overrideAttrs (old: {
-    version = "master-unstable";
+    version = "5.85";
 
     src = prev.fetchFromGitHub {
       owner = "bluez";
       repo = "bluez";
-      rev = "refs/heads/master";
-      hash = "sha256-Wj52uHIFhW5DaRcBvH9S4n01id3PA3i9vorts6ZJ7qc=";
+      rev = "5.85";
+      hash = "sha256-v9OpRed1eVxNdPeo4X2Jh1qKfyFcoWfzmguQbRcJd78=";
     };
 
-    # Wipe patches that don't apply to master anymore
+    # Remove patches that don't apply
     patches = [ ];
   });
 }
