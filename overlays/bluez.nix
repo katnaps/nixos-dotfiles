@@ -7,7 +7,7 @@ final: prev: {
         "mirror://kernel/linux/bluetooth/bluez-${version}.tar.xz"
         "https://www.kernel.org/pub/linux/bluetooth/bluez-${version}.tar.xz"
       ];
-      hash = "sha256-PsPKhkNKSfP2ScO35WamEDD7eHYi3HNvdsaHX9Nu4X0=";
+      hash = "sha256-rQKOSSVLxFUaE/CP55BMY9ArplDXe+iuFbs7CgrZSm8=";
     };
 
     # Keeping it lightweight and fast by removing autoreconfHook
