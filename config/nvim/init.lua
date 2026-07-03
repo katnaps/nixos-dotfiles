@@ -760,7 +760,7 @@ do
   -- You can press `g?` for help in this menu.
   -- local ensure_installed = vim.tbl_keys(servers or {})
   -- vim.list_extend(ensure_installed, {
-    -- You can add other tools here that you want Mason to install
+  -- You can add other tools here that you want Mason to install
   -- })
 
   -- require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -807,7 +807,7 @@ do
       -- python = { "isort", "black" },
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
-      javascript = { "prettierd", "prettier", stop_after_first = true },
+      javascript = { 'prettierd', 'prettier', stop_after_first = true },
       typescript = { 'prettier' },
       javascriptreact = { 'prettier' },
       typescriptreact = { 'prettier' },
