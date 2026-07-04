@@ -2,7 +2,7 @@
 ## Requirements
  - Copy the `hardware-configuration.nix` from `/etc/nixos/hardware-configuration.nix` to `nixos-dotfiles/nixos/` directory.
 
-## git clone 
+## Git Clone 
 ### SSH clone
 ```
 # git clone git@github.com:katnaps/nixos-dotfiles.git
