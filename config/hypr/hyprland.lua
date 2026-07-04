@@ -43,15 +43,7 @@ hl.monitor({
 
 -- monitor = name, addreserved, TOP, BOTTOM, LEFT, RIGHT
 
-hl.monitor({
-	output = "HDMI-A-1",
-	reserved_area = {
-		top = 0,
-		bottom = 13,
-		left = 0,
-		right = 0,
-	},
-})
+hl.monitor({ output = "HDMI-A-1", reserved_area = { top = 0, bottom = 15, left = 0, right = 0 } })
 
 ---------------------
 ---- MY PROGRAMS ----
