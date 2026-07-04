@@ -11,7 +11,6 @@
 ```
 # git clone https://github.com/katnaps/nixos-dotfiles.git
 ```
-<br/>
 Copy `hardware-configuration.nix` by running this command
 ```
 # cp -v /etc/nixos/hardware-configuration.nix ~/nixos-dotfiles/nixos/
