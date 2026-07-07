@@ -41,6 +41,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  # Install microcode for intel CPU
   hardware.cpu.intel.updateMicrocode = true;
 
   services.displayManager.ly.enable = true;
