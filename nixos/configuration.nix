@@ -41,6 +41,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  hardware.cpu.intel.updateMicrocode = true;
+
   services.displayManager.ly.enable = true;
 
   programs.hyprland = {
