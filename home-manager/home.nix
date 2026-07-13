@@ -40,6 +40,8 @@ in
     fastfetch
     nvtopPackages.full
     bat
+    unzip
+    zip
 
     # Media & Viewers
     vlc
