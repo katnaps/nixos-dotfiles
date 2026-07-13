@@ -116,6 +116,8 @@
   services.udisks2.enable = true;
   services.flatpak.enable = true;
 
+  xdg.portal.enable = true;
+
   services.flatpak.packages = [
     {
       appId = "com.stremio.Stremio";
