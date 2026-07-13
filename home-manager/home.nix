@@ -83,7 +83,7 @@ in
       # This tells fzf to use fd for searching files
       defaultCommand = "fd --type f --hidden --exclude .git";
       # This tells fzf to use fd when you press Ctrl+T
-      fileWidgetCommand = "fd --type f --hidden --exclude .git";
+      fileWidget.command = "fd --type f --hidden --exclude .git";
     };
 
     yazi = {
@@ -132,6 +132,7 @@ in
   };
 
   home.pointerCursor = {
+    enable = true;
     package = pkgs.adwaita-icon-theme;
     name = "Adwaita";
     size = 24;
