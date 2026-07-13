@@ -153,10 +153,5 @@ in
     extraConfig = builtins.readFile ../config/hypr/hyprland.lua;
   };
 
-  # Helps desktop find Flatpak apps (recommended for Hyprland)
-  home.sessionVariables = {
-    XDG_DATA_DIRS = "$XDG_DATA_DIRS:/var/lib/flatpak/exports/share";
-  };
-
   home.stateVersion = "26.05";
 }
