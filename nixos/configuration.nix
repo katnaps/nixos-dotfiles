@@ -107,11 +107,6 @@
     nerd-fonts.jetbrains-mono
   ];
 
-  # Temporary delete later once its been updated by NixOS maintainers
-  nixpkgs.config.permittedInsecurePackages = [
-    "pnpm-9.15.9"
-  ];
-
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
