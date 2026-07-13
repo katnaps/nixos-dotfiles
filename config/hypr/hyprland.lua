@@ -268,7 +268,7 @@ hl.device({
 ---------------------
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
-local screenshot = 'grim -g "$(slurp)"'
+local screenshot = 'grim -g "$(slurp)" ~/Pictures/$(date +%Y%m%d_%H%M%S).png'
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(terminal))
