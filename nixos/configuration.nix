@@ -115,6 +115,8 @@
   services.upower.enable = true;
   services.udisks2.enable = true;
 
+  xdg.portal.enable = true;
+
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
