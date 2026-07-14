@@ -14,16 +14,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Nix Flatpak repo
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
   outputs =
     {
       nixpkgs,
       home-manager,
-      nix-flatpak,
       ...
     }@inputs:
     {
@@ -56,8 +52,6 @@
                 backupFileExtension = "backup";
               };
             }
-
-            nix-flatpak.nixosModules.nix-flatpak
           ];
         };
       };
