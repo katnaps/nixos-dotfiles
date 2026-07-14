@@ -1,4 +1,8 @@
 # Instllation
+
+### Packages include:
+ - stremio-linux-shell through flatpak
+
 ## Requirements
  - Copy the `hardware-configuration.nix` from `/etc/nixos/hardware-configuration.nix` to `nixos-dotfiles/nixos/` directory.
 
