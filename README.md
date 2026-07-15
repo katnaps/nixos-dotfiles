@@ -1,5 +1,7 @@
 # Instllation
+
 ### Unstable Version - NixOS 26.11 (Zokor) x86_64
+
 ## Requirements
  - Copy the `hardware-configuration.nix` from `/etc/nixos/hardware-configuration.nix` to `nixos-dotfiles/nixos/` directory.
 
