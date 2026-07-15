@@ -1,5 +1,7 @@
 # Instllation
 
+### Stable Version - NixOS 26.05 (Yarara) x86_64
+
 ### Packages include:
  - stremio-linux-shell installed through flatpak
 
