@@ -29,5 +29,10 @@ Run the following command
 To install from this flake<br/>
 run the following command
 ```
+# sudo nixos-rebuild boot --flake ~/nixos-dotfiles#nixos-fruit
+```
+`nixos-rebuild boot` flag will build the nixos generation and place it at the top as the default boot upon the next boot startup in boot menu.
+```
 # sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-fruit
 ```
+`nixos-rebuild switch` flag will build the nixos generation and will automatically switch and use it after build completion.
