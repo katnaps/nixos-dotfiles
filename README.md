@@ -31,8 +31,8 @@ run the following command
 ```
 # sudo nixos-rebuild boot --flake ~/nixos-dotfiles#nixos-fruit
 ```
-`nixos-rebuild boot` flag will build the nixos generation and place it at the top as the default boot upon the next boot startup in boot menu.
+`nixos-rebuild boot` flag will build the new configuration and make it the boot default (as with `nixos-rebuild switch`), but do not activate it. That is, the system continues to run the previous configuration until the next reboot.
 ```
 # sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-fruit
 ```
-`nixos-rebuild switch` flag will build the nixos generation and will automatically switch and use it after build completion.
+`nixos-rebuild switch` flag will build and activate the new configuration, and make it the boot default.
