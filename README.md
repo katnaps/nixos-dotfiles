@@ -1,4 +1,4 @@
-# Instllation
+# Installation
 
 ### Stable Version - NixOS 26.05 (Yarara) x86_64
 
