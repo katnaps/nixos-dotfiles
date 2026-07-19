@@ -1,4 +1,4 @@
-# Instllation
+# Installation
 
 ### Unstable Version - NixOS 26.11 (Zokor) x86_64
 
