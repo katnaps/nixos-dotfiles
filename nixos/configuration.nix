@@ -54,6 +54,21 @@
       inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    config = {
+      hyprland = {
+        default = [
+          "hyprland"
+          "gtk"
+        ];
+      };
+    };
+  };
+
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
@@ -114,8 +129,6 @@
   # List services that you want to enable:
   services.upower.enable = true;
   services.udisks2.enable = true;
-
-  xdg.portal.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
