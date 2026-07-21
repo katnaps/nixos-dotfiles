@@ -54,6 +54,21 @@
       inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    config = {
+      hyprland = {
+        default = [
+          "hyprland"
+          "gtk"
+        ];
+      };
+    };
+  };
+
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
@@ -115,8 +130,6 @@
   services.upower.enable = true;
   services.udisks2.enable = true;
   services.flatpak.enable = true;
-
-  xdg.portal.enable = true;
 
   services.flatpak.packages = [
     {
