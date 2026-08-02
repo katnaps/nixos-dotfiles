@@ -68,7 +68,7 @@ in
     oh-my-posh = {
       enable = true;
       enableZshIntegration = true;
-      config = builtins.fromTOML (builtins.readFile ../config/ohmyposh/p10k.toml);
+      settings = builtins.fromTOML (builtins.readFile ../config/ohmyposh/p10k.toml);
     };
 
     zsh = {
