@@ -41,9 +41,6 @@ function ds4Battery {
 	bash $HOME/scripts/ps4BatteryCheck "$@"
 }
 
-# Prompt
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/p10k.toml)"
-
 # Zoxide
 eval "$(zoxide init --cmd cd zsh)"
 

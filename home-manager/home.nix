@@ -36,7 +36,6 @@ in
     # Terminal & Shell Utilities
     foot
     kitty
-    oh-my-posh
     fastfetch
     nvtopPackages.full
     bat
@@ -65,6 +64,12 @@ in
     brave.enable = true;
     keepassxc.enable = true;
     gpg.enable = true;
+
+    oh-my-posh = {
+      enable = true;
+      enableZshIntegration = true;
+      config = builtins.fromTOML (builtins.readFile ../config/ohmyposh/p10k.toml);
+    };
 
     zsh = {
       enable = true;
