@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 let
   dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
@@ -149,7 +154,7 @@ in
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = null;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
     systemd = {
       enable = true;
