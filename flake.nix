@@ -29,6 +29,8 @@
           specialArgs = { inherit inputs; };
           modules = [
 
+            inputs.hyprland.nixosModules.default
+
             ./nixos/configuration.nix
             ./modules/nvidia.nix
             ./modules/bluetooth.nix
