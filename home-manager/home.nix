@@ -92,7 +92,10 @@ in
       settings = {
         main = {
           font = "FiraCode Nerd Font:size=15";
-          include = "${pkgs.foot}/share/foot/themes/catppuccin-mocha";
+          include = "${pkgs.fetchurl {
+            url = "https://raw.githubusercontent.com/catppuccin/foot/main/themes/catppuccin-mocha.ini";
+            hash = "sha256-QVR3EDb3Lkvg2FKbQOli5g1+GpB41WAj6OakHtJorEQ=";
+          }}";
         };
 
         colors-dark = {
