@@ -92,7 +92,7 @@ in
       settings = {
         main = {
           font = "FiraCode Nerd Font:size=15";
-          # include = "${pkgs.foot.themes}/share/foot/themes/catppuccin-mocha";
+          include = "${pkgs.foot.themes}/share/foot/themes/catppuccin-mocha";
         };
 
         colors-dark = {
