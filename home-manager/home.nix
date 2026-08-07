@@ -149,7 +149,6 @@ in
     # pinetry for gpg
     gpg-agent = {
       enable = true;
-      enableSshSupport = true;
       pinentry = {
         package = pkgs.pinentry-curses;
       };
