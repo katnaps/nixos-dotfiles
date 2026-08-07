@@ -30,6 +30,7 @@ in
     # Wayland
     hyprpaper
     waybar
+    rofi
     grim
     slurp
     wl-clipboard
@@ -66,7 +67,6 @@ in
     brave.enable = true;
     keepassxc.enable = true;
     btop.enable = true;
-    rofi.enable = true;
 
     ssh = {
       enable = true;
