@@ -39,7 +39,6 @@ in
 
     # Terminal & Shell Utilities
     kitty
-    oh-my-posh
     fastfetch
     nvtopPackages.full
     bat
@@ -106,6 +105,12 @@ in
           alpha = 0.9;
         };
       };
+    };
+
+    oh-my-posh = {
+      enable = true;
+      enableZshIntegration = true;
+      settings = builtins.fromTOML (builtins.readFile ../config/ohmyposh/p10k.toml);
     };
 
     fzf = {
