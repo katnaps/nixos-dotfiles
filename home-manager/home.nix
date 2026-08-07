@@ -156,6 +156,7 @@ in
 
   services = {
     ssh-agent.enable = true;
+    udiskie.enable = true;
 
     # pinetry for gpg
     gpg-agent = {
@@ -165,8 +166,6 @@ in
         package = pkgs.pinentry-curses;
       };
     };
-
-    udiskie.enable = true;
   };
 
   home.pointerCursor = {
