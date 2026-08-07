@@ -8,7 +8,6 @@ let
   dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
-    foot = "foot";
     waybar = "waybar";
     rofi = "rofi";
     ohmyposh = "ohmyposh";
@@ -39,7 +38,6 @@ in
     mesa-demos
 
     # Terminal & Shell Utilities
-    foot
     kitty
     fastfetch
     nvtopPackages.full
@@ -82,18 +80,31 @@ in
       };
     };
 
+    zsh = {
+      enable = true;
+      initContent = ''
+        source ${config.home.homeDirectory}/nixos-dotfiles/.zshrc;
+      '';
+    };
+
+    foot = {
+      enable = true;
+      settings = {
+        main = {
+          font = "FiraCode Nerd Font:size=15";
+          include = "${pkgs.foot}/share/foot/themes/catppuccin-mocha";
+        };
+
+        colors-dark = {
+          alpha = 0.9;
+        };
+      };
+    };
+
     oh-my-posh = {
       enable = true;
       enableZshIntegration = true;
       settings = builtins.fromTOML (builtins.readFile ../config/ohmyposh/p10k.toml);
-    };
-
-    zsh = {
-      enable = true;
-      initContent = ''
-        source /home/coconut/nixos-dotfiles/.zshrc;
-        export GPG_TTY=$(tty)
-      '';
     };
 
     git = {
@@ -149,6 +160,7 @@ in
     # pinetry for gpg
     gpg-agent = {
       enable = true;
+      enableZshIntegration = true;
       pinentry = {
         package = pkgs.pinentry-curses;
       };
