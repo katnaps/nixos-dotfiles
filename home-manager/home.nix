@@ -30,7 +30,6 @@ in
     # Wayland
     hyprpaper
     waybar
-    rofi
     grim
     slurp
     wl-clipboard
@@ -53,10 +52,10 @@ in
     stremio-linux-shell
 
     # Languages
-    nixd
-    nixfmt
     rustup
     nodejs
+    prettier
+    stylua
   ];
 
   programs = {
@@ -67,6 +66,7 @@ in
     brave.enable = true;
     keepassxc.enable = true;
     btop.enable = true;
+    rofi.enable = true;
 
     ssh = {
       enable = true;
@@ -148,8 +148,6 @@ in
         nixd
         nixfmt
         rust-analyzer
-        prettier
-        stylua
       ];
     };
   };
