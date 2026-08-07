@@ -87,6 +87,13 @@ in
       '';
     };
 
+    git = {
+      enable = true;
+      includes = [
+        { path = "~/.config/git/local.config"; }
+      ];
+    };
+
     foot = {
       enable = true;
       settings = {
@@ -105,13 +112,6 @@ in
       enable = true;
       enableZshIntegration = true;
       settings = builtins.fromTOML (builtins.readFile ../config/ohmyposh/p10k.toml);
-    };
-
-    git = {
-      enable = true;
-      includes = [
-        { path = "~/.config/git/local.config"; }
-      ];
     };
 
     fzf = {
