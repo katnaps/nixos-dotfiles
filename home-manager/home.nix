@@ -8,7 +8,6 @@ let
   dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
-    foot = "foot";
     waybar = "waybar";
     rofi = "rofi";
     ohmyposh = "ohmyposh";
@@ -39,7 +38,6 @@ in
     mesa-demos
 
     # Terminal & Shell Utilities
-    foot
     kitty
     oh-my-posh
     fastfetch
@@ -70,11 +68,22 @@ in
     keepassxc.enable = true;
     gpg.enable = true;
 
+    ssh = {
+      enable = true;
+      settings = {
+        "github.com" = {
+          HostName = "github.com";
+          User = "git";
+          IdentityFile = "~/.ssh/id_ed25519";
+          AddKeysToAgent = "yes";
+        };
+      };
+    };
+
     zsh = {
       enable = true;
       initContent = ''
-        source /home/coconut/nixos-dotfiles/.zshrc;
-        export GPG_TTY=$(tty)
+        source ${config.home.homeDirectory}/nixos-dotfiles/.zshrc;
       '';
     };
 
@@ -83,6 +92,20 @@ in
       includes = [
         { path = "~/.config/git/local.config"; }
       ];
+    };
+
+    foot = {
+      enable = true;
+      settings = {
+        main = {
+          font = "FiraCode Nerd Font:size=15";
+          include = "${pkgs.foot.themes}/share/foot/themes/catppuccin-mocha";
+        };
+
+        colors-dark = {
+          alpha = 0.9;
+        };
+      };
     };
 
     fzf = {
@@ -126,12 +149,13 @@ in
   };
 
   services = {
+    ssh-agent.enable = true;
     udiskie.enable = true;
 
     # pinetry for gpg
     gpg-agent = {
       enable = true;
-      enableSshSupport = true;
+      enableZshIntegration = true;
       pinentry = {
         package = pkgs.pinentry-curses;
       };
