@@ -62,11 +62,11 @@ in
   programs = {
     zoxide.enable = true;
     fd.enable = true;
-    btop.enable = true;
+    gpg.enable = true;
     firefox.enable = true;
     brave.enable = true;
     keepassxc.enable = true;
-    gpg.enable = true;
+    btop.enable = true;
 
     ssh = {
       enable = true;
