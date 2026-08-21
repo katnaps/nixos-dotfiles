@@ -93,12 +93,16 @@
   users.users.coconut = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel"
+      "adbusers"
+    ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
     ];
   };
 
+  programs.adb.enable = true;
   programs.steam.enable = true;
   programs.git.enable = true;
 

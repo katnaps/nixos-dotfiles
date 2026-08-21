@@ -57,6 +57,10 @@ in
     nodejs
     prettier
     stylua
+
+    # Android adb
+    android-tools
+    payload-dumper-go
   ];
 
   programs = {
