@@ -42,7 +42,7 @@ hl.monitor({
 -- Reserve pixel gaps on monitor if windows cut off
 -- Monitor issue for acer reserved 25 pixel bottom due dying pixel
 -- individual sides
-hl.monitor({ output = "HDMI-A-1", reserved_area = { top = 0, bottom = 30, left = 0, right = 0 } })
+hl.monitor({ output = "HDMI-A-1", reserved_area = { top = 0, bottom = 35, left = 0, right = 0 } })
 
 ---------------------
 ---- MY PROGRAMS ----
