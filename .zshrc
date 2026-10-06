@@ -36,11 +36,6 @@ function fanspeed {
 	bash $HOME/scripts/fanSpeed "$@"
 }
 
-# Check PlayStation Controller Battery
-function ds4Battery {
-	bash $HOME/scripts/ps4BatteryCheck "$@"
-}
-
 # Zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
