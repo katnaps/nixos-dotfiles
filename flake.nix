@@ -37,7 +37,6 @@
             ./modules/nvidia.nix
             ./modules/bluetooth.nix
             ./modules/keyboard.nix
-            ./modules/controller.nix
 
             {
               nixpkgs.overlays = [
