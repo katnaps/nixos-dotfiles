@@ -99,10 +99,7 @@
     ];
   };
 
-  programs.steam = {
-    enable = true;
-    extraCompatPackages = [ pkgs.proton-ge-bin ];
-  };
+  programs.steam.enable = true;
   programs.git.enable = true;
 
   # List packages installed in system profile.
