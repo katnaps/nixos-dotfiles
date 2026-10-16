@@ -22,7 +22,7 @@ alias cpustatus=$HOME/scripts/readCpuGovernor
 alias setcpu=$HOME/scripts/setCpuPerformance
 
 # Connect to bluetooth audio
-alias audiobluetooth='bluetoothctl connect F4:4E:FD:8A:95:D3'
+alias audiobluetooth='bluetoothctl connect F4:4E:FD:6B:7F:8C'
 
 # Disconnect bluetooth connection
 alias disconnectBluetooth='bluetoothctl disconnect'
