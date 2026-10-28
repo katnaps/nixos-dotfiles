@@ -99,7 +99,10 @@
     ];
   };
 
-  programs.steam.enable = true;
+  programs.steam = {
+    enable = true;
+    protontricks.enable = true;
+  };
   programs.git.enable = true;
 
   # List packages installed in system profile.
