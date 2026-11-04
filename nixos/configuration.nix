@@ -73,10 +73,6 @@
     };
   };
 
-  environment.sessionVariables = {
-    HYPRLAND_NO_RT = "1";
-  };
-
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
